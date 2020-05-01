@@ -1,6 +1,6 @@
 Package: rsample
 Title: General Resampling Infrastructure
-Version: 0.0.5.9000
+Version: 0.0.6.9000
 Authors@R: c(
     person(given = "Max",    family = "Kuhn",    email = "max@rstudio.com",      role = c("aut", "cre")),
     person(given = "Fanny",  family = "Chow",    email = "fannybchow@gmail.com", role = c("aut")),
@@ -17,10 +17,10 @@ Imports:
     generics,
     utils,
     tidyselect,
-    furrr
-Depends: 
-    R (>= 3.1), 
+    furrr, 
     tidyr
+Depends: 
+    R (>= 3.1)
 Suggests: 
     ggplot2,
     testthat,
@@ -37,5 +37,5 @@ License: GPL-2
 Encoding: UTF-8
 VignetteBuilder: knitr
 LazyData: true
-RoxygenNote: 7.0.2.9000
+RoxygenNote: 7.1.0.9000
 Roxygen: list(markdown = TRUE)

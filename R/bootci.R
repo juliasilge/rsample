@@ -50,7 +50,7 @@ check_tidy <- function(x, std_col = FALSE) {
   has_id <- any(names(x) == "id")
   if (has_id) {
     list_cols <- names(x)[map_lgl(x, is_list)]
-    x <- try(unnest(x, cols = list_cols), silent = TRUE)
+    x <- try(tidyr::unnest(x, cols = list_cols), silent = TRUE)
   } else {
     x <- try(map_dfr(x, ~ .x), silent = TRUE)
   }
@@ -212,7 +212,7 @@ pctl_single <- function(stats, alpha = 0.05) {
 #'
 #' set.seed(52156)
 #' car_rs <-
-#'   bootstraps(mtcars, 1000, apparent = TRUE) %>%
+#'   bootstraps(mtcars, 500, apparent = TRUE) %>%
 #'   mutate(results = map(splits, lm_est))
 #'
 #' int_pctl(car_rs, results)
@@ -231,7 +231,7 @@ pctl_single <- function(stats, alpha = 0.05) {
 #' }
 #'
 #' set.seed(69325)
-#' bootstraps(iris, 1000, apparent = TRUE) %>%
+#' bootstraps(iris, 500, apparent = TRUE) %>%
 #'   mutate(correlations = map(splits, rank_corr)) %>%
 #'   int_pctl(correlations)
 #' @export
